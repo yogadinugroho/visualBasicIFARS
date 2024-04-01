@@ -1,4 +1,6 @@
 Public Class Form1
+    'Sub Procedure
+    'Make Sub-Procedure in Public
     Sub bersih()
         txtKodeBarang.Clear()
         txtNamaBarang.Clear()
@@ -9,6 +11,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'Call Sub-Procedure
         Call bersih()
     End Sub
 
@@ -29,7 +32,7 @@ Public Class Form1
         Return totalHarga
     End Function
 
-    'define cek data kosong
+    'define sub-procedure cek data kosong
     Sub cekDataKosong()
         If txtKodeBarang.Text = "" Then
             MessageBox.Show("Kode Barang Harus Diisi Terlebih Dahulu", "Konfirmasi", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -53,5 +56,16 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Call cekDataKosong()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim tutup As String
+        tutup = MessageBox.Show("Yakin ingin menutup form ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If tutup = MsgBoxResult.Yes Then
+            End
+        Else
+            Exit Sub
+        End If
     End Sub
 End Class
